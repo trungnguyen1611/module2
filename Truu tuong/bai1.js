@@ -43,3 +43,41 @@ var Circle = /** @class */ (function (_super) {
 var circle = new Circle('thinhngu', 10);
 circle.resize(150);
 console.log(circle.calculateArea());
+var Cylinder = /** @class */ (function (_super) {
+    __extends(Cylinder, _super);
+    function Cylinder(name, radius, height) {
+        var _this = _super.call(this, name, radius) || this;
+        _this.height = height;
+        return _this;
+    }
+    Cylinder.prototype.calculateArea = function () {
+        return _super.prototype.calculateArea.call(this) * 2 + _super.prototype.calculatePerimeter.call(this) * this.height;
+    };
+    Cylinder.prototype.calculateVolume = function () {
+        return _super.prototype.calculateArea.call(this) * this.height;
+    };
+    return Cylinder;
+}(Circle));
+var Rectangle = /** @class */ (function (_super) {
+    __extends(Rectangle, _super);
+    function Rectangle(width, height, name) {
+        var _this = _super.call(this, name) || this;
+        _this.width = width;
+        _this.height = height;
+        return _this;
+    }
+    Rectangle.prototype.calculateArea = function () {
+        return this.width * this.height;
+    };
+    Rectangle.prototype.calculatePerimeter = function () {
+        return (this.width + this.height) * 2;
+    };
+    return Rectangle;
+}(Shape));
+var Square = /** @class */ (function (_super) {
+    __extends(Square, _super);
+    function Square(name, width) {
+        return _super.call(this, width, width, name) || this;
+    }
+    return Square;
+}(Rectangle));
