@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var thuchanh2_1 = require("./thuchanh2");
+var thuchanh2_1_1 = require("./thuchanh2.1");
+var book1 = new thuchanh2_1.Book('B001', 'Lap trinh JAVA');
+var book2 = new thuchanh2_1.Book('B002', 'Lap trinh PHP');
+var book3 = new thuchanh2_1.Book('B003', 'Lap trinh TypeScript');
+var bookManager = new thuchanh2_1_1.BookManager();
+bookManager.add(book1);
+bookManager.add(book2);
+bookManager.add(book3);
+console.log(bookManager.getList());
+bookManager.delete('B002');
+bookManager.update('B004', 'Lap trinh JavaScript');
+console.log(bookManager.getList());

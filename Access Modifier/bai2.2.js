@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var bai2_1 = require("./bai2");
+var bai2_1_1 = require("./bai2.1");
+var staff1 = new bai2_1.Staff('Nguyen', 'Trung', new Date(1998, 11, 16), 'Soc Son', 'Staff');
+var staff2 = new bai2_1.Staff('Tran', 'Duong', new Date(1997, 6, 16), 'Ha Noi', 'Staff');
+var staff3 = new bai2_1.Staff('Le', 'Khuong', new Date(1995, 9, 9), 'Hoai Duc', 'Boss');
+bai2_1_1.StaffManager.addStaff(staff1);
+bai2_1_1.StaffManager.addStaff(staff2);
+bai2_1_1.StaffManager.addStaff(staff3);
+bai2_1_1.StaffManager.showInfoStaff(bai2_1_1.StaffManager.list);
+bai2_1_1.StaffManager.setInfo(staff1, { firstName: 'Le', lastName: 'Thinh' });
